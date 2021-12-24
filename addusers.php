@@ -1,4 +1,10 @@
-<?php
+<?php 
+session_start(); 
+if (!isset($_SESSION['name']))
+{   
+    header("Location:login.php");
+}
+
 header('Location: users.php');
 try{
 	include_once("connection.php"); 
