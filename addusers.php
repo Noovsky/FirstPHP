@@ -34,6 +34,7 @@ try{
 	$stmt->bindParam(':gender', $_POST["gender"]);
 	$stmt->bindParam(':role', $role);
 	$stmt->execute();
+	$stmt->closeCursor();
 }
 catch(PDOException $e)
 {
