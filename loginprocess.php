@@ -8,11 +8,11 @@ $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 { 
 $hashed= $row['Pword'];
-$attempt= $_POST['passwd'];
+$attempt= $_POST['Pword'];
 if(password_verify($attempt,$hashed)){
     $_SESSION['name']=$row["Surname"];
     if (!isset($_SESSION['backURL'])){
-        $backURL= "/"; //Sets a default destination if no BackURL set (parent dir)
+        $backURL= "Users.php"; //Sets a default destination if no BackURL set (parent dir)
     }else{
         $backURL=$_SESSION['backURL'];
     }
